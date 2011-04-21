@@ -1,0 +1,12 @@
+To install, just copy the dircolors file to your home directory like this:
+
+    cp dircolors ~/.dircolors
+
+In your shell configuration files, add the following line:
+
+    eval $(dircolors ~/.dircolors)
+
+If you want to contribute, just fork and edit the dircolors.yml file.
+You can generate a new dircolors file like this:
+
+    python dircolors.py
