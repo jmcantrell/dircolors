@@ -1,14 +1,6 @@
-# Black:     0
-# Red:       1
-# Green:     2
-# Yellow:    3
-# Blue:      4
-# Magenta:   5
-# Cyan:      6
-# White:     7
+format: 00;3{n}
 
-
-0: # NORMAL
+extensions:
 
     1: # RED - Archives
         - .7z
@@ -127,12 +119,18 @@
         - .haml
 
     5: # MAGENTA - Documents
+        - .cfg
         - .chm
+        - .conf
+        - .csv
         - .doc
         - .docx
         - .dvi
         - .epub
+        - .ini
+        - .json
         - .key
+        - .log
         - .mobi
         - .msg
         - .nfo
@@ -143,57 +141,49 @@
         - .ppt
         - .pptx
         - .rtf
+        - .txt
         - .vcf
         - .wpd
         - .wps
         - .xls
         - .xlsx
-        - .cfg
-        - .conf
-        - .ini
-        - .json
         - .xml
         - .yml
-        - .csv
-        - .txt
-        - .log
 
-    6: # CYAN - Video
+    6: # CYAN - Media
         - .3g2
         - .3gp
+        - .aac
+        - .aif
         - .asf
         - .asx
         - .avi
-        - .flv
-        - .mkv
-        - .mov
-        - .mp4
-        - .mpeg
-        - .mpg
-        - .ogv
-        - .rm
-        - .swf
-        - .ts
-        - .vob
-        - .wmv
-
-    7: # WHITE - Audio
-        - .aac
-        - .aif
         - .cue
         - .dat
         - .fcm
         - .flac
+        - .flv
         - .iff
         - .m3u
         - .m4a
+        - .mkv
         - .mod
+        - .mov
         - .mp3
+        - .mp4
         - .mpa
+        - .mpeg
+        - .mpg
+        - .ogv
         - .ra
+        - .rm
         - .s3m
         - .sid
         - .spl
         - .spx
+        - .swf
+        - .ts
+        - .vob
         - .wav
         - .wma
+        - .wmv

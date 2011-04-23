@@ -1,24 +1,24 @@
 #!/usr/bin/env python
 
 import os.path, yaml
+from glob import glob
 
-def get_file(ext=''):
-    return os.path.splitext(__file__)[0]+ext
+ME = os.path.splitext(os.path.basename(__file__))[0]
 
-def get_data(ext=''):
-    return open(get_file(ext)).read()
-
-def output_data(data):
-    s = []
-    for a in data:
-        for n in data[a]:
-            for ext in data[a][n]:
-                s.append('%s 0%s;3%s' % (ext, a, n))
-    open(get_file(), 'w').write(
-            get_data('.tmpl').replace('{{DATA}}', '\n'.join(s))
-            )
+def here(fn):
+    return os.path.join(os.path.dirname(__file__), fn)
 
 def main():
-    output_data(yaml.load(get_data('.yml')))
+    tmpl = open(here(ME+'.tmpl')).read()
+    for yml in glob(here('*.yml')):
+        data = yaml.load(open(yml).read())
+        fmt = data['format']
+        lines = []
+        for n, exts in data['extensions'].items():
+            for ext in exts:
+                lines.append(' '.join([ext, fmt.format(n=n)]))
+        open(os.path.splitext(yml)[0], 'w').write(
+                tmpl.replace('{{DATA}}', '\n'.join(lines))
+                )
 
 if __name__ == '__main__': main()
