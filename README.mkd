@@ -1,10 +1,17 @@
 To install, just copy the dircolors file to your home directory like this:
 
-    cp dircolors ~/.dircolors
+    cp dircolors-8 ~/.dircolors-8
+    cp dircolors-256 ~/.dircolors-256
 
-In your shell configuration files, add the following line:
+In your shell configuration files, add the following:
 
-    eval $(dircolors ~/.dircolors)
+    dircolors=$HOME/.dircolors-$(tput colors)
+
+    if [[ -f $dircolors ]]; then
+        eval $(dircolors -b $dircolors)
+    else
+        eval $(dircolors)
+    fi
 
 If you want to contribute, just fork and edit the dircolors.yml file.
 You can generate a new dircolors file like this:
