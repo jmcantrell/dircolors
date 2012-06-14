@@ -5,8 +5,10 @@ from glob import glob
 
 ME = os.path.splitext(os.path.basename(__file__))[0]
 
+
 def here(fn):
     return os.path.join(os.path.dirname(__file__), fn)
+
 
 def main():
     tmpl = open(here(ME+'.tmpl')).read()
@@ -17,8 +19,8 @@ def main():
         for n, exts in data['extensions'].items():
             for ext in exts:
                 lines.append(' '.join([ext, fmt.format(n=n)]))
-        open(os.path.splitext(yml)[0], 'w').write(
-                tmpl.replace('{{DATA}}', '\n'.join(lines))
-                )
+        open(os.path.splitext(yml)[0], 'w').write(tmpl.replace('{{DATA}}', '\n'.join(lines)))
 
-if __name__ == '__main__': main()
+
+if __name__ == '__main__':
+    main()
