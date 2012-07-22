@@ -185,6 +185,7 @@ EXEC 01;32 # This is for files with execute permission:
 .php 00;34
 .sass 00;34
 .scss 00;34
+.less 00;34
 .rst 00;34
 .textile 00;34
 .markdown 00;34

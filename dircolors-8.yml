@@ -107,6 +107,7 @@ extensions:
         - .php
         - .sass
         - .scss
+        - .less
         - .rst
         - .textile
         - .markdown

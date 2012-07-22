@@ -448,7 +448,7 @@ EXEC 01;32 # This is for files with execute permission:
 .com 38;5;216
 .command 38;5;216
 .java 38;5;217
-.egg-.info 38;5;218
+.egg-info 38;5;218
 .pth 38;5;218
 .tex 38;5;219
 .ltx 38;5;219
@@ -463,6 +463,7 @@ EXEC 01;32 # This is for files with execute permission:
 .css 38;5;222
 .scss 38;5;222
 .sass 38;5;222
+.less 38;5;222
 .sql 38;5;223
 .d 38;5;224
 .r 38;5;224
